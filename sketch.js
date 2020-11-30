@@ -4,6 +4,8 @@ var form;
 var player;
 var database;
 var abc;
+var allPlayers;
+var distance = 0;
 
 function setup(){
     createCanvas(500,500);
@@ -15,4 +17,11 @@ function setup(){
 
 function draw(){
     background(225);
+    if(PlayerCount == 2){
+        abc.update(1);
+    }
+    if(GameState === 1){
+        clear();
+        abc.play();
+    }
 }
