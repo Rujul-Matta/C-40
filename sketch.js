@@ -7,8 +7,12 @@ var abc;
 var allPlayers;
 var distance = 0;
 
+
+var car_1, car_2, car_3, car_4;
+var carArray 
+
 function setup(){
-    createCanvas(500,500);
+    createCanvas(displayWidth - 25, displayHeight - 25);
     database = firebase.database();
     abc = new game();
     abc.getG();
@@ -17,11 +21,12 @@ function setup(){
 
 function draw(){
     background(225);
-    if(PlayerCount == 2){
+    if(PlayerCount == 4){
         abc.update(1);
     }
     if(GameState === 1){
         clear();
         abc.play();
     }
+    // drawSprites();
 }
