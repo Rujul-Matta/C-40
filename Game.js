@@ -25,10 +25,20 @@ class game {
         }
         // if(GameState !== 0){
             
-            car_1 = createSprite(100,400);
-            car_2 = createSprite(300,400);
-            car_3 = createSprite(500,400);
-            car_4 = createSprite(700,400);
+            car_1 = createSprite(100,400-50);
+            car_1.addImage(Img_1);
+            car_1.scale = 0.1;
+            car_2 = createSprite(300,400-50);
+            car_2.addImage(Img_2);
+            car_2.scale = 0.1;
+
+            car_3 = createSprite(500,400-50);
+            car_3.addImage(Img_3);
+            car_3.scale = 0.1;
+
+            car_4 = createSprite(700,400-50);
+            car_4.addImage(Img_4);
+            car_4.scale = 0.1;
 
             carArray = [car_1, car_2, car_3, car_4];
             console.log(carArray)
@@ -43,16 +53,15 @@ class game {
     //    text('!!! GAME is ON !!!', displayWidth/2 - 250, displayHeight/2 - 200)
         Player.playerInfo()
         if (allPlayers !== undefined) {
+            background(rgb(198,135,103));
+            image(track, 0, -(displayHeight * 3.5), displayWidth,displayHeight*5)
             var index_1 = 0;
-            var x = 0;
+            var x = 75;
             var y;
-            // console.log("1x = " +car_1.x + " y " + car_1.y);
-            // console.log("2x = " +car_2.x + " 2y " + car_2.y);
-            // console.log("3x = " +car_3.x + " 3y " + car_3.y);
-            // console.log("4x = " +car_4.x + " 4y " + car_4.y);
+           
             for(var i in allPlayers){
                 index_1 += 1;
-                x += 200;
+                x += 250;
                 y = displayHeight - allPlayers[i].Distance
                 carArray[index_1-1].x = x;
                 carArray[index_1-1].y = y;
@@ -64,11 +73,20 @@ class game {
                 }
             }
 
+
         }
         if(keyIsDown(UP_ARROW) && player.index !== null){
-            player.distance += 50;
+            player.distance += 25;
             player.update();
         }
+
+        if(player.distance >= 3420){
+            GameState = 2;
+            
+        }
         drawSprites();
+    }
+    end(){
+        console.log("Game is OVER !!") 
     }
 }
