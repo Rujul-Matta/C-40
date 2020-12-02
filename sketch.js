@@ -9,7 +9,7 @@ var distance = 0;
 
 
 var car_1, car_2, car_3, car_4;
-var carArray 
+var carArray; 
 
 function setup(){
     createCanvas(displayWidth - 25, displayHeight - 25);
@@ -21,7 +21,7 @@ function setup(){
 
 function draw(){
     background(225);
-    if(PlayerCount == 4){
+    if(PlayerCount == 2){
         abc.update(1);
     }
     if(GameState === 1){

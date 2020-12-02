@@ -1,22 +1,24 @@
 class Form{
     constructor(){
-        this.input = createInput("Name:")
+        this.input = createInput("Enter Your Name:")
         this.button = createButton('PLAY');
-        this.greet = createElement('h3');
+        this.greet = createElement('h1');
+        this.title = createElement('h1');
     }
     hide(){
         this.greet.hide();
         this.button.hide();
         this.input.hide();
+        this.title.hide();
     }
     display(){
 
-        var title = createElement('h1');
-        title.html("Car Racing 3.0");
-        title.position(displayWidth/2 - 50, 25);
+        
+        this.title.html("Car Racing 3.0");
+        this.title.position(displayWidth/2 - 50, 25);
 
-        this.input.position(width/2 - 50 , height/2 - 50);
-        this.button.position(width/2 - 50, height/2 );
+        this.input.position((displayWidth/2-100) - 50 , displayHeight/2 - 75);
+        this.button.position((displayWidth/2-100) + 250, displayHeight/2 - 75 );
 
         this.button.mousePressed(()=>{
             this.input.hide();
@@ -30,7 +32,7 @@ class Form{
             player.updateCount(PlayerCount);
 
             this.greet.html('!!!! HELLO ' + player.name + " !!!!!");
-            this.greet.position(width/2 - 20, height/2 - 25)
+            this.greet.position(displayWidth/2 - 20, displayHeight/2 - 25)
         });
     }
 }
