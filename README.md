@@ -1,2 +1,2 @@
-# asynchronousBallMovement
-Boiler plate for ball moving aysnchronously
+# __C-40__
+__*Reseting the database*__
